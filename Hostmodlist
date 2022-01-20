@@ -1,0 +1,1 @@
+IP="$(hostname -I | awk '{ print $2}')" && awk '{ print $1 $1}' /etc/userdomains > /home/hostmodlist.txt && sed -i 's/:/ /g' /home/hostmodlist.txt && awk -v IP="$IP" '{ print IP " www."$1" " $2}' /home/hostmodlist.txt
